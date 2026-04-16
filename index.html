@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jasa Pembuatan Landing Page — Digital Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg: #f0f2f5;
+            --surface: #ffffff;
+            --surface-alt: #f8fafc;
+            --border: #e5e7eb;
+            --text: #0f172a;
+            --text-secondary: #475569;
+            --text-muted: #94a3b8;
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --accent-green: #10b981;
+            --accent-blue: #3b82f6;
+            --accent-purple: #8b5cf6;
+            --accent-orange: #f97316;
+            --shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+            --shadow-lg: 0 10px 30px -5px rgba(0, 0, 0, 0.08), 0 4px 15px -5px rgba(0, 0, 0, 0.04);
+            --radius: 12px;
+            --radius-sm: 8px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(160deg, #0f172a 0%, #1e293b 60%, #0f172a 100%);
+            padding: 80px 20px 90px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -40%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.12) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -20%;
+            left: -5%;
+            width: 350px;
+            height: 350px;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(10px);
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 28px;
+            letter-spacing: 0.3px;
+        }
+
+        .hero-badge .dot {
+            width: 8px;
+            height: 8px;
+            background: #10b981;
+            border-radius: 50%;
+            animation: pulse-dot 2s infinite;
+        }
+
+        @keyframes pulse-dot {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.3;
+            }
+        }
+
+        .hero h1 {
+            font-size: clamp(26px, 4.5vw, 42px);
+            font-weight: 800;
+            color: #fff;
+            line-height: 1.2;
+            margin-bottom: 14px;
+            letter-spacing: -0.5px;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(135deg, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.45);
+            max-width: 520px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* Stats bar */
+        .stats-bar {
+            max-width: 800px;
+            margin: -40px auto 40px;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .stats-inner {
+            background: var(--surface);
+            border-radius: var(--radius);
+            padding: 24px 32px;
+            box-shadow: var(--shadow-lg);
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+            flex-wrap: wrap;
+            border: 1px solid var(--border);
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-item .value {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--text);
+        }
+
+        .stat-item .label {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        .stat-divider {
+            width: 1px;
+            background: var(--border);
+            align-self: stretch;
+        }
+
+        /* Section */
+        .section-header {
+            max-width: 900px;
+            margin: 0 auto 36px;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .section-header h2 {
+            font-size: 26px;
+            font-weight: 800;
+            color: var(--text);
+            margin-bottom: 6px;
+        }
+
+        .section-header p {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        /* Pricing Cards */
+        .pricing-section {
+            max-width: 900px;
+            margin: 0 auto 60px;
+            padding: 0 20px;
+        }
+
+        .pricing-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 32px 36px;
+            margin-bottom: 16px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--card-accent);
+            border-radius: 0 2px 2px 0;
+        }
+
+        .pricing-card:hover {
+            box-shadow: var(--shadow-lg);
+            border-color: transparent;
+            transform: translateY(-2px);
+        }
+
+        .pricing-card.featured {
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            border-color: #334155;
+        }
+
+        .pricing-card.featured::before {
+            background: linear-gradient(180deg, var(--accent-blue), var(--accent-purple));
+        }
+
+        .pricing-card.featured:hover {
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.3);
+        }
+
+        .pricing-card.featured .card-top .pkg-name {
+            color: #fff;
+        }
+
+        .pricing-card.featured .card-top .pkg-price {
+            color: #fff;
+        }
+
+        .pricing-card.featured .card-meta {
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .pricing-card.featured .pkg-suitable {
+            color: rgba(255, 255, 255, 0.55);
+        }
+
+        .pricing-card.featured .pkg-suitable strong {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .pricing-card.featured .pkg-features-title {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .pricing-card.featured .pkg-feature {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .pricing-card.featured .pkg-feature::before {
+            color: #60a5fa;
+        }
+
+        .pricing-card.featured .pkg-divider {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .pricing-card.featured .nego-btn {
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            color: white;
+            border: none;
+        }
+
+        .pricing-card.featured .nego-btn:hover {
+            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
+        }
+
+        .featured-badge {
+            display: none;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            color: white;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 14px;
+            border-radius: 50px;
+            margin-bottom: 16px;
+            letter-spacing: 0.5px;
+        }
+
+        .card-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+
+        .pkg-name {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .pkg-price {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--primary);
+            white-space: nowrap;
+        }
+
+        .card-meta {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+        }
+
+        .card-meta .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .card-meta .meta-sep {
+            color: var(--border);
+        }
+
+        .pkg-suitable {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .pkg-suitable strong {
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        .pkg-features-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 10px;
+        }
+
+        .pkg-features {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .pkg-feature {
+            font-size: 13.5px;
+            color: var(--text-secondary);
+            padding: 4px 0;
+            padding-left: 22px;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .pkg-feature::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-green);
+            font-weight: 700;
+            font-size: 13px;
+        }
+
+        .pkg-divider {
+            height: 1px;
+            background: var(--border);
+            margin-bottom: 20px;
+        }
+
+        .card-bottom {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .nego-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: var(--radius-sm);
+            font-size: 14px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: var(--primary);
+            color: white;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .nego-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 16px rgba(37, 99, 235, 0.3);
+        }
+
+        .nego-btn svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* Terms */
+        .terms-section {
+            max-width: 900px;
+            margin: 0 auto 60px;
+            padding: 0 20px;
+        }
+
+        .terms-card {
+            background: var(--surface);
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            overflow: hidden;
+        }
+
+        .terms-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .term-item {
+            padding: 22px 28px;
+            border-right: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            gap: 14px;
+            transition: background 0.2s ease;
+        }
+
+        .term-item:nth-child(even) {
+            border-right: none;
+        }
+
+        .term-item:nth-last-child(-n+2) {
+            border-bottom: none;
+        }
+
+        .term-item:hover {
+            background: var(--surface-alt);
+        }
+
+        .term-num {
+            width: 28px;
+            height: 28px;
+            background: var(--primary);
+            color: white;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .term-content h4 {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 4px;
+        }
+
+        .term-content p {
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* Payment */
+        .payment-section {
+            max-width: 900px;
+            margin: 0 auto 60px;
+            padding: 0 20px;
+        }
+
+        .payment-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .bank-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .bank-card:hover {
+            box-shadow: var(--shadow-lg);
+            border-color: transparent;
+        }
+
+        .bank-logo {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+
+        .bank-number {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .copy-btn {
+            background: none;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 3px 8px;
+            font-size: 12px;
+            cursor: pointer;
+            color: var(--text-muted);
+            transition: all 0.2s ease;
+        }
+
+        .copy-btn:hover {
+            background: var(--surface-alt);
+            color: var(--text);
+        }
+
+        .copy-btn.copied {
+            background: #d1fae5;
+            color: #059669;
+            border-color: #059669;
+        }
+
+        .bank-name {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        /* Footer */
+        .footer {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 30px 20px 40px;
+            text-align: center;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer p {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        /* Toast */
+        .toast {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background: #0f172a;
+            color: white;
+            padding: 14px 20px;
+            border-radius: var(--radius-sm);
+            font-size: 14px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 200;
+        }
+
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .toast-icon {
+            width: 24px;
+            height: 24px;
+            background: #10b981;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            flex-shrink: 0;
+        }
+
+        /* Scroll animation */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 50px 16px 70px;
+            }
+
+            .stats-inner {
+                gap: 24px;
+                padding: 20px;
+            }
+
+            .stat-divider {
+                display: none;
+            }
+
+            .pricing-card {
+                padding: 24px 20px;
+            }
+
+            .card-top {
+                flex-direction: column;
+                gap: 4px;
+            }
+
+            .pkg-price {
+                font-size: 20px;
+            }
+
+            .terms-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .term-item {
+                border-right: none;
+            }
+
+            .term-item:nth-last-child(-n+2) {
+                border-bottom: 1px solid var(--border);
+            }
+
+            .term-item:last-child {
+                border-bottom: none;
+            }
+
+            .payment-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media print {
+            .hero {
+                background: #fff !important;
+                padding: 20px;
+            }
+
+            .hero h1,
+            .hero p,
+            .hero-badge {
+                color: #000 !important;
+                -webkit-text-fill-color: #000 !important;
+            }
+
+            .stats-inner,
+            .pricing-card,
+            .terms-card,
+            .bank-card {
+                box-shadow: none;
+            }
+
+            .pricing-card.featured {
+                background: #f5f5f5 !important;
+                border-color: #ddd !important;
+            }
+
+            .pricing-card.featured * {
+                color: #000 !important;
+            }
+
+            .nego-btn {
+                border: 1px solid #ccc;
+                background: #fff !important;
+                color: #000 !important;
+            }
+
+            .toast {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="dot"></span>
+                Jasa Pembuatan Website Profesional
+            </div>
+            <h1>Jasa Pembuatan <span>Landing Page</span></h1>
+            <p>Solusi digital untuk meningkatkan penjualan, promosi produk, dan membangun citra profesional bisnis Anda
+                di internet.</p>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <div class="stats-bar fade-up">
+        <div class="stats-inner">
+            <div class="stat-item">
+                <div class="value">150+</div>
+                <div class="label">Proyek Selesai</div>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+                <div class="value">4.9★</div>
+                <div class="label">Rating Klien</div>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+                <div class="value">24/7</div>
+                <div class="label">Support Teknis</div>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+                <div class="value">1-14</div>
+                <div class="label">Hari Pengerjaan</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pricing -->
+    <div class="section-header fade-up">
+        <h2>Pilih Paket Sesuai Kebutuhan</h2>
+        <p>Semua paket termasuk desain responsif, gratis hosting, dan garansi teknis</p>
+    </div>
+    <section class="pricing-section">
+
+        <!-- STANDARD -->
+        <div class="pricing-card fade-up" style="--card-accent: #10b981;">
+            <div class="card-top">
+                <span class="pkg-name" style="color: var(--accent-green);">Standard</span>
+                <span class="pkg-price">Rp450,0 rb</span>
+            </div>
+            <div class="card-meta">
+                <span class="meta-item">📅 Waktu pengerjaan 1-3 hari</span>
+            </div>
+            <div class="pkg-suitable">
+                Cocok untuk promosi produk spesifik, campaign iklan, atau profil bisnis ringkas.
+            </div>
+            <div class="pkg-features-title">Apa yang akan diterima pemberi kerja:</div>
+            <ul class="pkg-features">
+                <li class="pkg-feature">1 Halaman Landing Page (Desain Premium)</li>
+                <li class="pkg-feature">Gratis Hosting 1 Tahun + Subdomain (atau bisa pakai domain sendiri)</li>
+                <li class="pkg-feature">Responsif di semua perangkat (Mobile Friendly)</li>
+                <li class="pkg-feature">Tombol Chat WhatsApp / Call-to-Action (CTA) yang menarik</li>
+            </ul>
+            <div class="pkg-divider"></div>
+            <div class="card-bottom">
+                <button class="nego-btn" onclick="handleNego('Standard')">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                    </svg>
+                    Chat and Nego
+                </button>
+            </div>
+        </div>
+
+        <!-- PREMIUM -->
+        <div class="pricing-card fade-up" style="--card-accent: #3b82f6;">
+            <div class="card-top">
+                <span class="pkg-name" style="color: var(--accent-blue);">Premium</span>
+                <span class="pkg-price">Rp850,0 rb</span>
+            </div>
+            <div class="card-meta">
+                <span class="meta-item">📅 Waktu pengerjaan 1-14 hari</span>
+                <span class="meta-sep">|</span>
+                <span class="meta-item">🔄 Jumlah Revisi Tak terbatas</span>
+            </div>
+            <div class="pkg-suitable">
+                Cocok untuk perusahaan, UMKM, atau agensi yang ingin tampil profesional di internet.
+            </div>
+            <div class="pkg-features-title">Apa yang akan diterima pemberi kerja:</div>
+            <ul class="pkg-features">
+                <li class="pkg-feature">Hingga 5 Halaman Utama (Home, About Us, Services, Gallery, Contact)</li>
+                <li class="pkg-feature">GRATIS Domain (.com / .id) & Hosting 1 Tahun</li>
+                <li class="pkg-feature">Formulir Kontak langsung terhubung ke email</li>
+                <li class="pkg-feature">Integrasi Sosial Media & Google Maps</li>
+                <li class="pkg-feature">Akses Admin Panel (Bisa update konten sendiri)</li>
+                <li class="pkg-feature">SEO Basic & Speed Optimization</li>
+            </ul>
+            <div class="pkg-divider"></div>
+            <div class="card-bottom">
+                <button class="nego-btn" onclick="handleNego('Premium')">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                    </svg>
+                    Chat and Nego
+                </button>
+            </div>
+        </div>
+
+    </section>
+
+
+
+
+
+    <!-- Terms -->
+    <div class="section-header fade-up">
+        <h2>Syarat & Ketentuan</h2>
+        <p>Berlaku untuk seluruh paket layanan</p>
+    </div>
+
+    <section class="terms-section fade-up">
+        <div class="terms-card">
+            <div class="terms-grid">
+                <div class="term-item">
+                    <div class="term-num">1</div>
+                    <div class="term-content">
+                        <h4>Pembayaran</h4>
+                        <p>50% DP di awal pengerjaan, 50% pelunasan setelah website live dan disetujui klien.</p>
+                    </div>
+                </div>
+                <div class="term-item">
+                    <div class="term-num">2</div>
+                    <div class="term-content">
+                        <h4>Materi Pendukung</h4>
+                        <p>Logo, teks, gambar, dan aset brand diserahkan maksimal 3 hari kerja setelah DP.</p>
+                    </div>
+                </div>
+                <div class="term-item">
+                    <div class="term-num">3</div>
+                    <div class="term-content">
+                        <h4>Revisi</h4>
+                        <p>Di luar jumlah revisi paket dikenakan biaya tambahan sesuai kesepakatan.</p>
+                    </div>
+                </div>
+                <div class="term-item">
+                    <div class="term-num">4</div>
+                    <div class="term-content">
+                        <h4>Domain & Hosting</h4>
+                        <p>Gratis tahun pertama. Perpanjangan tahun berikutnya ditanggung klien.</p>
+                    </div>
+                </div>
+                <div class="term-item">
+                    <div class="term-num">5</div>
+                    <div class="term-content">
+                        <h4>Pajak</h4>
+                        <p>Harga belum termasuk PPN 11% (dikenakan jika klien meminta faktur pajak resmi).</p>
+                    </div>
+                </div>
+                <div class="term-item">
+                    <div class="term-num">6</div>
+                    <div class="term-content">
+                        <h4>Garansi</h4>
+                        <p>Garansi seumur hidup selama masih berlangganan. Tidak mencakup kerusakan pihak ketiga.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment -->
+    <div class="section-header fade-up">
+        <h2>Info Pembayaran</h2>
+        <p>Transfer ke salah satu rekening di bawah ini</p>
+    </div>
+
+    <section class="payment-section fade-up">
+        <div class="payment-grid">
+            <div class="bank-card">
+                <div class="bank-logo">Bank BCA</div>
+                <div class="bank-number">
+                    <span>1234567890</span>
+                    <button class="copy-btn" onclick="copyToClipboard('1234567890', this)">Copy</button>
+                </div>
+                <div class="bank-name">a.n. rioovs</div>
+            </div>
+            <div class="bank-card">
+                <div class="bank-logo">Bank Mandiri</div>
+                <div class="bank-number">
+                    <span>0987654321</span>
+                    <button class="copy-btn" onclick="copyToClipboard('0987654321', this)">Copy</button>
+                </div>
+                <div class="bank-name">a.n. rioovs</div>
+            </div>
+            <div class="bank-card">
+                <div class="bank-logo">Bank BNI</div>
+                <div class="bank-number">
+                    <span>0123456789</span>
+                    <button class="copy-btn" onclick="copyToClipboard('0123456789', this)">Copy</button>
+                </div>
+                <div class="bank-name">a.n. rioovs</div>
+            </div>
+        </div>
+        <p style="text-align: center; margin-top: 20px; font-size: 13px; color: var(--text-muted);">
+            Konfirmasi transfer ke WhatsApp <strong>0858-5584-6666</strong> atau email
+            <strong>rivos921@gmail.com</strong>
+        </p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>rioovs · rivos921@gmail.com · 0858-5584-6666 · <a href="http://landing.rioovs.my.id">landing.rioovs.my.id</a>
+        </p>
+        <p style="margin-top: 4px; font-size: 12px;">© 2026 rioovs. All rights reserved.</p>
+    </footer>
+
+    <!-- Toast -->
+    <div class="toast" id="toast">
+        <div class="toast-icon">✓</div>
+        <span id="toastMessage">Berhasil!</span>
+    </div>
+
+    <script>
+        // Scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, index * 60);
+                }
+            });
+        }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+
+        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+        // Copy to clipboard
+        function copyToClipboard(text, btn) {
+            navigator.clipboard.writeText(text).then(() => {
+                btn.textContent = '✓ Tersalin';
+                btn.classList.add('copied');
+                showToast('Nomor rekening berhasil disalin');
+                setTimeout(() => {
+                    btn.textContent = 'Copy';
+                    btn.classList.remove('copied');
+                }, 2000);
+            }).catch(() => {
+                const ta = document.createElement('textarea');
+                ta.value = text;
+                document.body.appendChild(ta);
+                ta.select();
+                document.execCommand('copy');
+                document.body.removeChild(ta);
+                btn.textContent = '✓ Tersalin';
+                btn.classList.add('copied');
+                showToast('Nomor rekening berhasil disalin');
+                setTimeout(() => {
+                    btn.textContent = 'Copy';
+                    btn.classList.remove('copied');
+                }, 2000);
+            });
+        }
+
+        // Chat & Nego handler
+        function handleNego(pkgName) {
+            const message = encodeURIComponent(
+                `Halo, saya tertarik dengan paket ${pkgName}. Bisa diskusikan lebih lanjut?`
+            );
+            window.open(`https://wa.me/6285855846666?text=${message}`, '_blank');
+            showToast(`Membuka WhatsApp untuk paket ${pkgName}...`);
+        }
+
+        // Toast
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toastMessage').textContent = message;
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+    </script>
+</body>
+
+</html>
