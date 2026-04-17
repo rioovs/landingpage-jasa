@@ -4,14 +4,11 @@ import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import { MessageCircle } from "lucide-react";
 
-export function Hero() {
-  const handleChat = () => {
-    const message = encodeURIComponent(
-      "Halo, saya tertarik dengan layanan pembuatan landing page. Bisa diskusikan lebih lanjut?"
-    );
-    window.open(`https://wa.me/6285855846666?text=${message}`, "_blank");
-  };
+const WA_LINK = `https://wa.me/6285855846666?text=${encodeURIComponent(
+  "Halo, saya tertarik dengan layanan pembuatan landing page. Bisa diskusikan lebih lanjut?"
+)}`;
 
+export function Hero() {
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 py-20 md:py-28 lg:py-32">
       {/* Background Decorations */}
@@ -70,13 +67,16 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.5 }}
             className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
           >
-            <button
-              onClick={handleChat}
+            <a
+              href={WA_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Konsultasi gratis via WhatsApp"
               className="group inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-blue-500 to-purple-600 px-8 py-4 text-base font-semibold text-white shadow-lg shadow-blue-500/25 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/30 hover:scale-105"
             >
               <MessageCircle className="h-5 w-5" />
               Konsultasi Gratis
-            </button>
+            </a>
             <a
               href="#pricing"
               className="inline-flex items-center gap-2 rounded-xl border border-slate-700 bg-slate-800/50 px-8 py-4 text-base font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:bg-slate-800 hover:border-slate-600"

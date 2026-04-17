@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import {
   Check,
   MessageCircle,
@@ -54,13 +53,13 @@ const packages = [
   },
 ];
 
+function getWhatsAppLink(pkgName: string) {
+  return `https://wa.me/6285855846666?text=${encodeURIComponent(
+    `Halo, saya tertarik dengan paket ${pkgName}. Bisa diskusikan lebih lanjut?`
+  )}`;
+}
+
 export function Pricing() {
-  const handleNego = (pkgName: string) => {
-    const message = encodeURIComponent(
-      `Halo, saya tertarik dengan paket ${pkgName}. Bisa diskusikan lebih lanjut?`,
-    );
-    window.open(`https://wa.me/6285855846666?text=${message}`, "_blank");
-  };
 
   return (
     <section id="pricing" className="py-20 md:py-28">
@@ -201,17 +200,20 @@ export function Pricing() {
                       </ul>
                     </div>
 
-                    <Button
-                      onClick={() => handleNego(pkg.name)}
-                      className={`w-full gap-2 py-6 text-base font-semibold transition-all duration-300 ${
+                    <a
+                      href={getWhatsAppLink(pkg.name)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Chat WhatsApp untuk paket ${pkg.name}`}
+                      className={`inline-flex w-full items-center justify-center gap-2 rounded-md py-6 text-base font-semibold transition-all duration-300 ${
                         pkg.featured
-                          ? "bg-gradient-to-r from-blue-500 to-purple-600 hover:opacity-90 hover:shadow-lg hover:shadow-blue-500/25"
-                          : "bg-slate-900 hover:bg-slate-800"
+                          ? "bg-gradient-to-r from-blue-500 to-purple-600 text-white hover:opacity-90 hover:shadow-lg hover:shadow-blue-500/25"
+                          : "bg-slate-900 text-white hover:bg-slate-800"
                       }`}
                     >
                       <MessageCircle className="h-5 w-5" />
-                      Chat
-                    </Button>
+                      Chat via WhatsApp
+                    </a>
                   </CardContent>
                 </Card>
               </motion.div>
