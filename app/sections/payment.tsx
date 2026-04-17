@@ -10,21 +10,9 @@ import { Building2, Copy, Check, Mail, Phone } from "lucide-react";
 const banks = [
   {
     name: "Bank BCA",
-    number: "1234567890",
-    holder: "rioovs",
+    number: "1131312356",
+    holder: "RIO OKTAVIANSYAH",
     color: "from-blue-600 to-blue-800",
-  },
-  {
-    name: "Bank Mandiri",
-    number: "0987654321",
-    holder: "rioovs",
-    color: "from-yellow-500 to-yellow-700",
-  },
-  {
-    name: "Bank BNI",
-    number: "0123456789",
-    holder: "rioovs",
-    color: "from-green-600 to-green-800",
   },
 ];
 
@@ -64,11 +52,11 @@ export function Payment() {
             Info Pembayaran
           </h2>
           <p className="mx-auto max-w-2xl text-lg text-slate-600">
-            Transfer ke salah satu rekening di bawah ini
+            Transfer ke rekening di bawah ini
           </p>
         </motion.div>
 
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="mx-auto max-w-md">
           {banks.map((bank, index) => (
             <motion.div
               key={bank.name}
