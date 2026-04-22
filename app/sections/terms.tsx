@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Wallet, FileText, RefreshCw, Globe, Receipt, Shield } from "lucide-react";
+import { Wallet, FileText, RefreshCw, Globe, Shield } from "lucide-react";
 
 const terms = [
   {
@@ -32,12 +32,6 @@ const terms = [
   },
   {
     number: "05",
-    title: "Pajak",
-    description: "Harga belum termasuk PPN 11% (dikenakan jika klien meminta faktur pajak resmi).",
-    icon: Receipt,
-  },
-  {
-    number: "06",
     title: "Garansi",
     description: "Garansi seumur hidup selama masih berlangganan. Tidak mencakup kerusakan pihak ketiga.",
     icon: Shield,
