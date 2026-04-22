@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import { MessageCircle } from "lucide-react";
 
@@ -9,6 +10,16 @@ const WA_LINK = `https://wa.me/6285855846666?text=${encodeURIComponent(
 )}`;
 
 export function Hero() {
+  const WORDS = ["Landing Page", "Website", "Web Portfolio"];
+  const [wordIndex, setWordIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setWordIndex((prev) => (prev + 1) % WORDS.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 pt-32 md:pt-40 lg:pt-48 pb-20 md:pb-28 lg:pb-32">
       {/* Background Decorations */}
@@ -43,11 +54,22 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="mb-6 text-4xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl"
+            className="mb-6 text-4xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl flex flex-col items-center justify-center gap-2 sm:block sm:gap-0"
           >
             Jasa Pembuatan{" "}
-            <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-              Landing Page
+            <span className="inline-grid overflow-hidden">
+              <AnimatePresence mode="popLayout">
+                <motion.span
+                  key={wordIndex}
+                  initial={{ y: 50, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  exit={{ y: -50, opacity: 0 }}
+                  transition={{ duration: 0.4, ease: "easeInOut" }}
+                  className="col-start-1 row-start-1 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent pb-1 sm:pb-3"
+                >
+                  {WORDS[wordIndex]}
+                </motion.span>
+              </AnimatePresence>
             </span>
           </motion.h1>
 
