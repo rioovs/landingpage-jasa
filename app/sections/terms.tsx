@@ -46,7 +46,7 @@ const terms = [
 
 export function Terms() {
   return (
-    <section className="bg-slate-50 py-20 md:py-28">
+    <section id="syarat-ketentuan" className="bg-slate-50 py-20 md:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

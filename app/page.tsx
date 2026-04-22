@@ -1,7 +1,10 @@
+import { Header } from "./sections/header";
 import { Hero } from "./sections/hero";
 import { StatsBar } from "./sections/stats-bar";
+import { CaraKerja } from "./sections/cara-kerja";
 import { Pricing } from "./sections/pricing";
 import { Terms } from "./sections/terms";
+import { FAQ } from "./sections/faq";
 import { Payment } from "./sections/payment";
 import { Footer } from "./sections/footer";
 
@@ -122,10 +125,13 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <main className="min-h-screen bg-slate-50/50">
+        <Header />
         <Hero />
         <StatsBar />
+        <CaraKerja />
         <Pricing />
         <Terms />
+        <FAQ />
         <Payment />
         <Footer />
       </main>
