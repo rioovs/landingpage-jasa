@@ -7,24 +7,28 @@ import { ChevronDown } from "lucide-react";
 
 const faqs = [
   {
-    question: "Berapa harga jasa pembuatan landing page?",
-    answer: "Harga jasa pembuatan landing page mulai dari Rp450.000 untuk paket Standard (1 halaman) dan Rp850.000 untuk paket Premium (hingga 5 halaman). Semua paket termasuk desain responsif, gratis hosting 1 tahun, dan garansi teknis.",
+    question: "Berapa harga jasa pembuatan website / landing page?",
+    answer: "Harga jasa kami sangat terjangkau, mulai dari Rp 49.000/bulan untuk Paket Ujicoba, dan paket sekali bayar mulai dari Rp 249.000 untuk Website Bisnis hingga Rp 1.495.000 untuk Website Enterprise.",
   },
   {
     question: "Berapa lama waktu pengerjaan website?",
-    answer: "Waktu pengerjaan untuk paket Standard adalah 1-3 hari kerja, sedangkan paket Premium membutuhkan 1-14 hari kerja tergantung kompleksitas proyek.",
+    answer: "Waktu pengerjaan berkisar antara 1 hingga 7 hari kerja, tergantung pada paket yang dipilih dan kompleksitas desain serta fitur website yang Anda butuhkan.",
   },
   {
     question: "Apakah sudah termasuk hosting dan domain?",
-    answer: "Ya, semua paket sudah termasuk gratis hosting 1 tahun. Paket Standard mendapat subdomain gratis, sedangkan paket Premium mendapat domain .com atau .id gratis. Perpanjangan tahun berikutnya ditanggung klien.",
+    answer: "Ya, semua paket sudah mendapatkan GRATIS Hosting dan Domain selama 1 tahun pertama. Untuk biaya perpanjangan (renewal) tahun berikutnya bervariasi mulai dari Rp 200.000/tahun tergantung paket dan jenis domain yang digunakan.",
   },
   {
-    question: "Bagaimana sistem pembayaran?",
-    answer: "Sistem pembayaran menggunakan DP 50% di awal pengerjaan, dan 50% pelunasan setelah website live dan disetujui klien.",
+    question: "Apakah ada sistem kontrak berlangganan?",
+    answer: "Tidak ada kontrak yang mengikat. Anda bebas berlangganan dan dapat melakukan upgrade paket kapan saja sesuai dengan kebutuhan perkembangan bisnis Anda.",
+  },
+  {
+    question: "Bagaimana sistem pembayaran pengerjaan website?",
+    answer: "Untuk paket sekali bayar (Website Bisnis, Profesional, dan Enterprise), sistem pembayaran menggunakan DP 50% di awal sebelum pengerjaan dimulai, dan sisa pelunasan 50% dibayarkan setelah website selesai dan disetujui.",
   },
   {
     question: "Apakah bisa revisi jika desain kurang cocok?",
-    answer: "Tentu. Kami memberikan kesempatan revisi sesuai dengan paket yang Anda pilih. Untuk paket Premium, Anda mendapatkan revisi tak terbatas (unlimited) sampai desain sesuai keinginan.",
+    answer: "Tentu saja! Setiap paket memiliki kuota revisi. Khusus untuk paket Website Profesional dan Website Enterprise, Anda akan mendapatkan fasilitas Unlimited Revisi sampai desain benar-benar sesuai dengan keinginan Anda.",
   },
 ];
 
